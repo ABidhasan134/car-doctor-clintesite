@@ -1,0 +1,38 @@
+/* @import url(../../../assets/images/banner/1.jpg); */
+.banar{
+    position: relative;
+    height: 640px;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    z-index: 1;
+    color: aliceblue;
+}
+.banar::before{
+    position: absolute;
+    justify-content: center;
+    content: '';
+    background: url('../../../assets/images/banner/1.jpg') no-repeat center;
+    filter: brightness(50%);
+    height: 600px;
+    width: 90%;
+
+    padding: 30px;
+    margin: 20px;
+    z-index: -1;
+}
+.banar p{
+    position: relative;
+    display: grid;
+    text-align: center;
+    font-size: 46px;
+    top: 78px;
+    
+}
+.banar h1{
+    position: relative;
+    display: grid;
+    text-align: center;
+    font-size: 90px;
+    top: -109px;
+}
