@@ -1,13 +1,33 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import logo from "../../../assets/icons/Wrench.svg"
 import { Link, NavLink } from 'react-router-dom'
+import { Authcoxtext } from '../../../context/authProvider'
 const Navbar = () => {
+  const {user,LogOut}=useContext(Authcoxtext);
+  const handelLogout=()=>{
+    LogOut()
+    
+  }
     const links=<>
      <li><a> <NavLink to="/">Home</NavLink></a></li>
-        <li><a><NavLink>About</NavLink></a></li>
+        <li><a><NavLink to={`/login`}>About</NavLink></a></li>
         <li><a><NavLink>Service</NavLink></a></li>
         <li><a><NavLink>Blog</NavLink></a></li>
         <li><a><NavLink>Contact</NavLink></a></li></>
+
+
+          const logElement=<>
+          {
+            user?<div>
+            <NavLink  onClick={handelLogout}>Log Out</NavLink>
+            <NavLink  to={`/bookings`}>Bookings</NavLink>
+            </div>: <div>
+               <li><NavLink to="/login">Log In</NavLink></li>
+            <li><NavLink to="/singup">Register</NavLink></li>
+            </div>
+          }
+        
+          </>
   return (
     <div className="navbar bg-base-100">
     <div className="navbar-start">
@@ -29,7 +49,7 @@ const Navbar = () => {
       </ul>
     </div>
     <div className="navbar-end">
-      <a className="btn">Button</a>
+     {logElement}
     </div>
   </div>
   )

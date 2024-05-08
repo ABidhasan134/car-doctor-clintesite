@@ -1,0 +1,56 @@
+<form className="card-body" onSubmit={handelBooking}>
+{/* name and email section */}
+<div className="flex gap-2 justify-center">
+  {/* name section */}
+  <div className="w-[50%]">
+    <span>Name</span>
+    <input
+      type="text"
+      defaultValue={data?.displayeName}
+      name="name"
+      placeholder="Enter your name"
+      className=" mt-2 input input-bordered input-accent w-full"
+      required
+    />
+  </div>
+  {/* email section */}
+  <div className="w-[50%]">
+    <span>Your email</span>
+    <input
+      type="email"
+      defaultValue={data.email}
+      name="email"
+      placeholder="email"
+      className=" mt-2 input input-bordered input-accent w-full"
+      required
+    />
+  </div>
+</div>
+{/* date and due section */}
+<div className="flex gap-2 justify-center">
+  {/* date section */}
+  <div className="w-[50%]">
+    <span>Service Date</span>
+    <input
+      type="date"
+      name="date"
+      placeholder="Enter service date"
+      className=" mt-2 input input-bordered input-accent w-full"
+      required
+    />
+  </div>
+  {/* email section */}
+  <div className="w-[50%]">
+    <span>Due amount</span>
+    <input
+      type="amount"
+      defaultValue={data.price}
+      name="amount"
+      placeholder="Due amount"
+      className=" mt-2 input input-bordered input-accent w-full"
+      required
+    />
+  </div>
+</div>
+<button className="btn">Order</button>
+</form>
